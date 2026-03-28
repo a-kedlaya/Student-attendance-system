@@ -1,6 +1,6 @@
 STUDENT ATTENDANCE MANAGEMENT SYSTEM
 
-A College Attendance Dashboard web app with separate Teacher & Student portals for managing and viewing attendance efficiently.
+A College Attendance Dashboard  with separate Teacher & Student portals for managing and viewing attendance efficiently.
 Teachers can register, add students, mark attendance, and view analytics, while students can track their attendance records.
 Built with a structured SQL database for secure storage, retrieval, and management of academic data.
 
