@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>College Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+  <nav class="topbar">
+    <div class="brand">College Dashboard</div>
+    <div class="navlinks">
+      <a href="index.html">Dashboard</a>
+      <a href="students.html">Students</a>
+      <a href="attendance.html">Attendance</a>
+      <span id="teacherName" style="margin-left: 20px; color: #ffd43b;"></span>
+      <a href="#" onclick="logout(); return false;">Logout</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section class="filters">
+      <label>Branch:
+        <select id="branchSelect"></select>
+      </label>
+
+      <label>Year:
+        <select id="yearSelect">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+      </label>
+
+      <label>Subject:
+        <select id="subjectSelect">
+          <option value="">-- Select Subject --</option>
+        </select>
+      </label>
+
+      <button id="applyBtn">Apply</button>
+    </section>
+
+    <div class="dashboard-grid">
+      <!-- LEFT SIDE -->
+      <div class="dashboard-left">
+        <div class="card">
+          <h3>Student Attendance Summary </h3>
+          <table id="attendanceTable" class="striped">
+            <thead>
+              <tr>
+                <th>Student</th>
+                <th>Present</th>
+                <th>Total</th>
+                <th>%</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+
+        <div class="card full">
+          <h3>Branch Attendance Chart</h3>
+          <canvas id="attendanceChart" height="150"></canvas>
+        </div>
+      </div>
+
+      <!-- RIGHT SIDE -->
+      <div class="dashboard-right">
+        <div class="card">
+          <h3>Lecturer Incharge</h3>
+          <ul id="teacherList"></ul>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="scripts/common.js"></script>
+  <script src="scripts/dashboard.js"></script>
+</body>
+
+</html>

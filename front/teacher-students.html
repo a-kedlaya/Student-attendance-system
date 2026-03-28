@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>My Students - Teacher Portal</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <nav class="topbar">
+        <div class="brand">Teacher Portal</div>
+        <div class="navlinks">
+            <a href="teacher-dashboard.html">My Dashboard</a>
+            <a href="teacher-students.html">My Students</a>
+            <a href="teacher-attendance.html">Mark Attendance</a>
+            <span id="teacherName" style="margin-left: 20px; color: #ffd43b;"></span>
+            <a href="#" onclick="logout(); return false;">Logout</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <h2>My Students Management</h2>
+        <p id="departmentInfo" style="color: #555; margin-bottom: 20px;"></p>
+
+        <div class="formcard">
+            <h3>Add New Student</h3>
+            <label>Name <input id="nameInput" placeholder="Student full name"></label>
+            <label>Roll No <input id="rollInput" placeholder="e.g., CSE101"></label>
+            <label>Year
+                <select id="yearInput">
+                    <option value="">-- Select Year --</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+            </label>
+            <button id="addBtn">Add Student</button>
+        </div>
+
+        <div class="card">
+            <h3>Students in My Department</h3>
+            <label>Filter by Year:
+                <select id="yearFilter">
+                    <option value="">All Years</option>
+                    <option value="1">Year 1</option>
+                    <option value="2">Year 2</option>
+                    <option value="3">Year 3</option>
+                    <option value="4">Year 4</option>
+                </select>
+            </label>
+            <button id="refreshBtn">Refresh</button>
+
+            <table id="studentsTable" class="striped">
+                <thead>
+                    <tr>
+                        <th>Roll No</th>
+                        <th>Name</th>
+                        <th>Year</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </main>
+
+    <script src="scripts/notifications.js"></script>
+    <script src="scripts/common.js"></script>
+    <script src="scripts/teacher-students.js"></script>
+</body>
+
+</html>

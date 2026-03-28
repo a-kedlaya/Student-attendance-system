@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>My Attendance - Student Portal</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <nav class="topbar">
+        <div class="brand">Student Portal</div>
+        <div class="navlinks">
+            <a href="student-dashboard.html">My Attendance</a>
+            <span id="studentName" style="margin-left: 20px; color: #ffd43b;"></span>
+            <a href="#" onclick="logoutStudent(); return false;">Logout</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <h2>My Attendance Dashboard</h2>
+
+        <div class="dashboard-grid">
+            <div class="dashboard-left">
+                <div class="card">
+                    <h3>My Attendance Summary</h3>
+                    <table id="attendanceTable" class="striped">
+                        <thead>
+                            <tr>
+                                <th>Subject</th>
+                                <th>Present</th>
+                                <th>Total</th>
+                                <th>Percentage</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+
+                <div class="card full">
+                    <h3>Attendance Chart</h3>
+                    <canvas id="attendanceChart" height="150"></canvas>
+                </div>
+            </div>
+
+            <div class="dashboard-right">
+                <div class="card">
+                    <h3>My Details</h3>
+                    <div id="studentDetails"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="scripts/notifications.js"></script>
+    <script src="scripts/student-dashboard.js"></script>
+</body>
+
+</html>

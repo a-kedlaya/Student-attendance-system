@@ -1,0 +1,1266 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  --blue: #2c6fb7;
+  --dark-blue: #1e53a6;
+  --accent: #1370d6;
+  --light: #f5f8fb;
+  --card: #fff;
+  --text: #222;
+  --text-light: #555;
+  --shadow: rgba(0, 0, 0, 0.08);
+  --shadow-hover: rgba(0, 0, 0, 0.15);
+  --radius: 10px;
+  --transition: 0.3s ease;
+}
+
+/* 🌐 Global */
+* {
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  margin: 0;
+  background: var(--light);
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* 🔷 Navbar */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, var(--dark-blue), var(--blue));
+  padding: 14px 24px;
+  color: white;
+  box-shadow: 0 3px 8px var(--shadow);
+}
+
+.topbar h1 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.topbar .navlinks a {
+  color: #fff;
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.topbar .navlinks a:hover {
+  color: #ffd43b;
+}
+
+/* 📦 Containers */
+.container {
+  padding: 28px;
+  max-width: 1250px;
+  margin: auto;
+}
+
+h2 {
+  color: var(--dark-blue);
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+/* 🧾 Cards */
+.card {
+  background: var(--card);
+  padding: 24px;
+  border-radius: var(--radius);
+  box-shadow: 0 2px 10px var(--shadow);
+  margin-bottom: 20px;
+  transition: all var(--transition);
+}
+
+.card:hover {
+  box-shadow: 0 5px 18px var(--shadow-hover);
+  transform: translateY(-3px);
+}
+
+/* ===============================
+   🧩 DASHBOARD FILTERS
+================================= */
+.filters {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.filters label {
+  font-weight: 500;
+  color: var(--text);
+}
+
+.filters select {
+  width: 220px;
+  padding: 10px 14px;
+  border-radius: var(--radius);
+  border: 1px solid #ccc;
+  font-size: 15px;
+  background: #fff;
+  transition: all var(--transition);
+}
+
+.filters select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 6px rgba(19, 112, 214, 0.3);
+}
+
+/* ===============================
+   🧱 DASHBOARD LAYOUT GRID
+   (Main section + Teacher Load on right)
+================================= */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  /* Left: student summary + charts | Right: teacher load */
+  gap: 20px;
+  align-items: start;
+}
+
+.dashboard-left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.dashboard-right {
+  position: sticky;
+  top: 90px;
+  /* keeps teacher load visible while scrolling */
+}
+
+/* ===============================
+   🧑‍🎓 Student Management Layout Polished
+   (Aligned width + refined spacing + improved button)
+================================= */
+
+.formcard {
+  background: var(--card);
+  padding: 22px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  max-width: 100%;
+  /* 👈 Full width to match Student List */
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.formcard h3 {
+  color: var(--text);
+  margin-bottom: 15px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.formcard label {
+  display: block;
+  margin-bottom: 4px;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+/* 🧩 Input + Select fields - same width as Student List */
+.formcard input,
+.formcard select {
+  width: 100%;
+  padding: 10px 12px;
+  /* 🔹 slightly reduced spacing */
+  margin-bottom: 12px;
+  /* 🔹 tighter vertical space */
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 16px;
+  background-color: #fff;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.formcard input:focus,
+.formcard select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 6px rgba(19, 112, 214, 0.25);
+  outline: none;
+}
+
+/* 🎯 Add Student button */
+.formcard button {
+  width: 30%;
+  padding: 10px 0;
+  font-size: 16px;
+  font-weight: 600;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.formcard button:hover {
+  background: #0f5db8;
+}
+
+/* ===============================
+   📋 Student List Button (Show)
+================================= */
+button.showBtn {
+  width: 30%;
+  padding: 10px 0;
+  font-size: 16px;
+  font-weight: 600;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button.show-btn:hover {
+  background: #0f5db8;
+  transform: translateY(-1px);
+}
+
+button.show-btn:active {
+  transform: translateY(0);
+}
+
+/* ===============================
+   📊 TABLE STYLING
+================================= */
+.striped {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.striped th {
+  background: var(--blue);
+  color: #fff;
+  text-align: left;
+  padding: 12px;
+  font-weight: 600;
+}
+
+.striped td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.striped tr:hover td {
+  background: #eef5ff;
+}
+
+/* ===============================
+   📱 Responsive Adjustments
+================================= */
+@media (max-width: 900px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-right {
+    position: static;
+  }
+}
+
+/* ===============================
+   🧑‍🏫 Fix spacing between A/P and student name
+================================= */
+.attendance-options {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  /* space between P and A */
+  margin-right: 15px;
+  /* space before student name */
+}
+
+.student-item {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  /* space between attendance and name */
+  background: #f8faff;
+  padding: 10px 16px;
+  border-radius: var(--radius);
+  box-shadow: 0 1px 3px var(--shadow);
+  transition: background 0.3s;
+}
+
+.student-item:hover {
+  background: #eaf3ff;
+}
+
+.student-name {
+  font-weight: 500;
+  color: var(--text);
+  flex: 1;
+}
+
+/* Slightly bigger click area for radios */
+.attendance-options input[type="radio"] {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+/* ===============================
+   🎨 Enhanced Buttons (Show + Submit)
+   Consistent with Add Student & Load Students
+================================= */
+
+/* General button style */
+button {
+  background: linear-gradient(90deg, #2c6fb7, #1e53a6);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  transition: all 0.25s ease;
+}
+
+/* Hover effect */
+button:hover {
+  background: linear-gradient(90deg, #1e53a6, #2c6fb7);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Pressed effect */
+button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Special smaller button style (Show) */
+#showBtn {
+  background: linear-gradient(90deg, #3498db, #2176c7);
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+#showBtn:hover {
+  background: linear-gradient(90deg, #2176c7, #3498db);
+}
+
+/* Submit Attendance button */
+button[type="submit"] {
+  background: linear-gradient(90deg, #1b7ced, #1163cf);
+  font-size: 15px;
+  padding: 10px 22px;
+}
+
+button[type="submit"]:hover {
+  background: linear-gradient(90deg, #1163cf, #1b7ced);
+}
+
+/* ===============================
+   🔐 LOGIN PAGE STYLING
+================================= */
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+}
+
+.login-card {
+  background: var(--card);
+  padding: 40px;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 20px var(--shadow-hover);
+  width: 100%;
+  max-width: 420px;
+}
+
+.login-card h2 {
+  text-align: center;
+  color: var(--dark-blue);
+  margin-bottom: 30px;
+  font-size: 26px;
+}
+
+.login-card label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.login-card input {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 20px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 16px;
+  background-color: #fff;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.login-card input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 6px rgba(19, 112, 214, 0.25);
+  outline: none;
+}
+
+.login-card button {
+  width: 100%;
+  padding: 12px 0;
+  font-size: 16px;
+  font-weight: 600;
+  background: linear-gradient(90deg, var(--dark-blue), var(--blue));
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-top: 10px;
+}
+
+.login-card button:hover {
+  background: linear-gradient(90deg, var(--blue), var(--dark-blue));
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.error-msg {
+  color: #e74c3c;
+  text-align: center;
+  margin-top: 15px;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.login-footer {
+  text-align: center;
+  margin-top: 20px;
+  color: var(--text-light);
+  font-size: 14px;
+}
+
+.login-footer a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.login-footer a:hover {
+  color: var(--dark-blue);
+  text-decoration: underline;
+}
+
+/* ===============================
+   🗑️ DELETE BUTTON STYLING
+================================= */
+.delete-btn {
+  background: linear-gradient(90deg, #e74c3c, #c0392b);
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.delete-btn:hover {
+  background: linear-gradient(90deg, #c0392b, #e74c3c);
+  transform: translateY(-1px);
+}
+
+/* ===============================
+   📜 ATTENDANCE HISTORY STYLING
+================================= */
+.history-list {
+  margin-top: 20px;
+}
+
+.history-date-group {
+  margin-bottom: 30px;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.history-date-group h4 {
+  color: var(--dark-blue);
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.status-P {
+  color: #27ae60;
+  font-weight: 600;
+}
+
+.status-A {
+  color: #e74c3c;
+  font-weight: 600;
+}
+
+/* ===============================
+   📊 ENHANCED TABLE FOR HISTORY
+================================= */
+.history-date-group table {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+#historyContainer {
+  max-height: 600px;
+  overflow-y: auto;
+  margin-top: 15px;
+}
+
+/* ===============================
+   📚 SUBJECTS SELECTION IN SIGNUP
+================================= */
+#subjectsContainer {
+  margin-bottom: 15px;
+}
+
+#subjectsContainer label {
+  display: block;
+  margin: 5px 0;
+  font-size: 14px;
+  font-weight: normal;
+  cursor: pointer;
+  transition: background 0.2s;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+#subjectsContainer label:hover {
+  background: #f0f4f8;
+}
+
+#subjectsContainer input[type="checkbox"] {
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.subject-checkbox {
+  transform: scale(1.1);
+}
+
+/ *===============================🎨 MODERN UI IMPROVEMENTS=================================*/
+/* Notification Toast */
+.notification-toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: white;
+  padding: 16px 24px;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 10000;
+  transform: translateX(400px);
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  min-width: 300px;
+  max-width: 500px;
+}
+
+.notification-toast.show {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.notification-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.notification-message {
+  flex: 1;
+  font-size: 15px;
+  color: #333;
+}
+
+.notification-success {
+  border-left: 4px solid #27ae60;
+}
+
+.notification-success .notification-icon {
+  background: #d4edda;
+  color: #27ae60;
+}
+
+.notification-error {
+  border-left: 4px solid #e74c3c;
+}
+
+.notification-error .notification-icon {
+  background: #f8d7da;
+  color: #e74c3c;
+}
+
+.notification-warning {
+  border-left: 4px solid #f39c12;
+}
+
+.notification-warning .notification-icon {
+  background: #fff3cd;
+  color: #f39c12;
+}
+
+.notification-info {
+  border-left: 4px solid #3498db;
+}
+
+.notification-info .notification-icon {
+  background: #d1ecf1;
+  color: #3498db;
+}
+
+/* Confirm Dialog */
+.confirm-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.confirm-overlay.show {
+  opacity: 1;
+}
+
+.confirm-dialog {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  max-width: 450px;
+  width: 90%;
+  transform: scale(0.9);
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.confirm-dialog.show {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.confirm-header {
+  padding: 24px 24px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.confirm-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #fff3cd;
+  color: #f39c12;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.confirm-header h3 {
+  margin: 0;
+  font-size: 20px;
+  color: #333;
+}
+
+.confirm-body {
+  padding: 24px;
+}
+
+.confirm-body p {
+  margin: 0;
+  font-size: 15px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.confirm-footer {
+  padding: 16px 24px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.btn-cancel,
+.btn-confirm {
+  padding: 10px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-cancel {
+  background: #f0f0f0;
+  color: #555;
+}
+
+.btn-cancel:hover {
+  background: #e0e0e0;
+}
+
+.btn-confirm {
+  background: linear-gradient(90deg, #e74c3c, #c0392b);
+  color: white;
+}
+
+.btn-confirm:hover {
+  background: linear-gradient(90deg, #c0392b, #e74c3c);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
+}
+
+/* Loading Spinner */
+.loading-spinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  color: #666;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #f0f0f0;
+  border-top: 4px solid var(--accent);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 16px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-spinner p {
+  margin: 0;
+  font-size: 15px;
+  color: #666;
+}
+
+/* Enhanced Buttons */
+button,
+.btn {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+button:active,
+.btn:active {
+  transform: scale(0.98);
+}
+
+button:disabled,
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Enhanced Cards */
+.card {
+  transition: all 0.3s ease;
+  border: 1px solid #e8e8e8;
+}
+
+.card:hover {
+  border-color: #d0d0d0;
+}
+
+/* Enhanced Form Inputs */
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(19, 112, 214, 0.1);
+}
+
+/* Enhanced Table */
+.striped tbody tr {
+  transition: background 0.2s;
+}
+
+.striped tbody tr:hover {
+  background: #f8f9fa;
+  transform: translateX(2px);
+}
+
+/* Badge Styles */
+.badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.badge-success {
+  background: #d4edda;
+  color: #27ae60;
+}
+
+.badge-danger {
+  background: #f8d7da;
+  color: #e74c3c;
+}
+
+.badge-info {
+  background: #d1ecf1;
+  color: #3498db;
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: #999;
+}
+
+.empty-state-icon {
+  font-size: 64px;
+  margin-bottom: 16px;
+  opacity: 0.3;
+}
+
+.empty-state h3 {
+  margin: 0 0 8px;
+  color: #666;
+  font-size: 20px;
+}
+
+.empty-state p {
+  margin: 0;
+  color: #999;
+  font-size: 15px;
+}
+
+/* Smooth Transitions */
+* {
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+}
+
+/* Improved Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Pulse Animation for Updates */
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.updating {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.4s ease-out;
+}
+
+/* Enhanced Navigation */
+.topbar .navlinks a {
+  position: relative;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: all 0.3s;
+}
+
+.topbar .navlinks a:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.topbar .navlinks a.active {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Status Indicators */
+.status-indicator {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+
+.status-online {
+  background: #27ae60;
+  box-shadow: 0 0 8px rgba(39, 174, 96, 0.5);
+}
+
+.status-offline {
+  background: #95a5a6;
+}
+
+/* Improved Select Dropdown */
+select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23333' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 36px;
+}
+
+/* Tooltip */
+[data-tooltip] {
+  position: relative;
+  cursor: help;
+}
+
+[data-tooltip]:hover::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 8px 12px;
+  background: #333;
+  color: white;
+  font-size: 13px;
+  border-radius: 6px;
+  white-space: nowrap;
+  z-index: 1000;
+  margin-bottom: 8px;
+}
+
+/*
+ ===============================
+   📝 IMPROVED SIGNUP PAGE
+================================= */
+.signup-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  padding: 20px;
+}
+
+.signup-card {
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+}
+
+.signup-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.signup-header h2 {
+  margin: 0 0 8px;
+  color: var(--dark-blue);
+  font-size: 28px;
+}
+
+.signup-header p {
+  margin: 0;
+  color: #666;
+  font-size: 15px;
+}
+
+.signup-form .form-group {
+  margin-bottom: 20px;
+}
+
+.signup-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+  font-size: 14px;
+}
+
+.signup-form input,
+.signup-form select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: all 0.3s;
+  background: #fafafa;
+}
+
+.signup-form input:focus,
+.signup-form select:focus {
+  background: white;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(19, 112, 214, 0.1);
+  outline: none;
+}
+
+.subjects-container {
+  background: #f8f9fa;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 16px;
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.subjects-hint {
+  margin: 0;
+  color: #999;
+  font-size: 13px;
+  text-align: center;
+  padding: 20px;
+}
+
+.subjects-container label {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  margin: 4px 0;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-weight: normal;
+}
+
+.subjects-container label:hover {
+  background: #e8f0fe;
+}
+
+.subjects-container input[type="checkbox"] {
+  width: auto;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.subjects-container strong {
+  display: block;
+  color: var(--dark-blue);
+  font-size: 15px;
+  margin: 12px 0 8px;
+  padding-left: 12px;
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, var(--dark-blue), var(--accent));
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-top: 10px;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(19, 112, 214, 0.3);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.signup-footer {
+  text-align: center;
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid #e0e0e0;
+  color: #666;
+  font-size: 14px;
+}
+
+.signup-footer a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.signup-footer a:hover {
+  color: var(--dark-blue);
+  text-decoration: underline;
+}
+
+/* ==
+=============================
+   ✅ CUSTOM MODAL
+================================= */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-overlay.show {
+  display: flex;
+}
+
+.modal-box {
+  background: white;
+  border-radius: 16px;
+  padding: 40px;
+  max-width: 450px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.modal-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
+  background: linear-gradient(135deg, #27ae60, #2ecc71);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  color: white;
+  box-shadow: 0 8px 20px rgba(39, 174, 96, 0.3);
+}
+
+.modal-box h3 {
+  margin: 0 0 12px;
+  color: #333;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.modal-box p {
+  margin: 0 0 30px;
+  color: #666;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.modal-btn {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, var(--dark-blue), var(--accent));
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.modal-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(19, 112, 214, 0.4);
+}
+
+.modal-btn:active {
+  transform: translateY(0);
+}

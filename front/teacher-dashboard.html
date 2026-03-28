@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>My Dashboard - Teacher Portal</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <nav class="topbar">
+        <div class="brand">Teacher Portal</div>
+        <div class="navlinks">
+            <a href="teacher-dashboard.html">My Dashboard</a>
+            <a href="teacher-students.html">My Students</a>
+            <a href="teacher-attendance.html">Mark Attendance</a>
+            <span id="teacherName" style="margin-left: 20px; color: #ffd43b;"></span>
+            <a href="#" onclick="logout(); return false;">Logout</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <h2>My Teaching Dashboard</h2>
+
+        <div class="filters">
+            <label>Select Subject:
+                <select id="classSelect">
+                    <option value="">-- Select a Subject --</option>
+                </select>
+            </label>
+            <button id="searchBtn">🔍 Search</button>
+        </div>
+
+        <div class="dashboard-grid">
+            <div class="dashboard-left">
+                <div class="card">
+                    <h3>Student Attendance Summary</h3>
+                    <table id="attendanceTable" class="striped">
+                        <thead>
+                            <tr>
+                                <th>Roll No</th>
+                                <th>Student Name</th>
+                                <th>Present</th>
+                                <th>Total</th>
+                                <th>%</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="5">
+                                    <div class="empty-state">
+                                        <div class="empty-state-icon">📚</div>
+                                        <h3>Select a Subject</h3>
+                                        <p>Choose a subject from the dropdown to view attendance data</p>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="card full">
+                    <h3>Attendance Chart</h3>
+                    <canvas id="attendanceChart" height="150"></canvas>
+                </div>
+            </div>
+
+            <div class="dashboard-right">
+                <div class="card">
+                    <h3>My Subjects</h3>
+                    <ul id="subjectsList"></ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="scripts/notifications.js"></script>
+    <script src="scripts/common.js"></script>
+    <script src="scripts/teacher-dashboard.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Teacher Login - College Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <nav class="topbar">
+        <div class="brand">College Dashboard</div>
+    </nav>
+
+    <main class="container">
+        <div class="login-wrapper">
+            <div class="login-card">
+                <h2>Teacher Login</h2>
+                <form id="loginForm">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required />
+
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required />
+
+                    <button type="submit">Login</button>
+                </form>
+                <div id="errorMsg" class="error-msg"></div>
+                <div class="login-footer">
+                    Don't have an account? <a href="signup.html">Sign up here</a><br>
+                    <span style="margin-top: 10px; display: inline-block;">Are you a student? <a
+                            href="student-login.html">Login here</a></span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="scripts/login.js"></script>
+</body>
+
+</html>

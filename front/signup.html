@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Teacher Signup - College Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <nav class="topbar">
+        <div class="brand">College Dashboard</div>
+    </nav>
+
+    <main class="container">
+        <div class="signup-wrapper">
+            <div class="signup-card">
+                <div class="signup-header">
+                    <h2>Teacher Registration</h2>
+                    <p>Create your account to get started</p>
+                </div>
+                <form id="signupForm" class="signup-form">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your full name" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="department">Department</label>
+                        <select id="department" name="department" required>
+                            <option value="">-- Select Department --</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subjects">Subjects You Will Teach</label>
+                        <div id="subjectsContainer" class="subjects-container">
+                            <p class="subjects-hint">Select department first to see available subjects</p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" placeholder="Create a password" required
+                            minlength="6" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword"
+                            placeholder="Confirm your password" required minlength="6" />
+                    </div>
+
+                    <button type="submit" class="btn-primary">Sign Up</button>
+                </form>
+                <div id="errorMsg" class="error-msg"></div>
+                <div class="signup-footer">
+                    Already have an account? <a href="login.html">Login here</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Custom Modal -->
+    <div id="customModal" class="modal-overlay">
+        <div class="modal-box">
+            <div class="modal-icon">✓</div>
+            <h3 id="modalTitle">Success</h3>
+            <p id="modalMessage">Registration successful! Please login.</p>
+            <button id="modalBtn" class="modal-btn">OK</button>
+        </div>
+    </div>
+
+    <script src="scripts/signup.js"></script>
+</body>
+
+</html>

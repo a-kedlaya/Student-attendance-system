@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Mark Attendance - Teacher Portal</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <nav class="topbar">
+        <div class="brand">Teacher Portal</div>
+        <div class="navlinks">
+            <a href="teacher-dashboard.html">My Dashboard</a>
+            <a href="teacher-students.html">My Students</a>
+            <a href="teacher-attendance.html">Mark Attendance</a>
+            <span id="teacherName" style="margin-left: 20px; color: #ffd43b;"></span>
+            <a href="#" onclick="logout(); return false;">Logout</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <h2>Mark Attendance</h2>
+
+        <div class="formcard">
+            <label>Select Subject:
+                <select id="classSelect"></select>
+            </label>
+            <label>Date:
+                <input type="date" id="attDate" />
+            </label>
+            <button id="loadStudentsBtn">Load Students</button>
+        </div>
+
+        <div class="card">
+            <h3>Students</h3>
+            <form id="attendanceForm">
+                <div id="studentsList"></div>
+                <button type="submit">Submit Attendance</button>
+            </form>
+        </div>
+
+        <div class="card">
+            <h3>Attendance History</h3>
+            <button id="viewHistoryBtn">View History for Selected Subject</button>
+            <div id="historyContainer"></div>
+        </div>
+    </main>
+
+    <script src="scripts/notifications.js"></script>
+    <script src="scripts/common.js"></script>
+    <script src="scripts/teacher-attendance.js"></script>
+</body>
+
+</html>

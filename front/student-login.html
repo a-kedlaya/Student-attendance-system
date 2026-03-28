@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Student Login - College Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <nav class="topbar">
+        <div class="brand">College Dashboard</div>
+        <div class="navlinks">
+            <a href="login.html">Teacher Login</a>
+            <a href="student-login.html" class="active">Student Login</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="login-wrapper">
+            <div class="login-card">
+                <h2>Student Login</h2>
+                <p style="text-align: center; color: #666; margin-bottom: 20px;">Enter your credentials to view your
+                    attendance</p>
+                <form id="studentLoginForm">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your full name" required />
+
+                    <label for="rollNo">Roll Number</label>
+                    <input type="text" id="rollNo" name="rollNo" placeholder="Enter your roll number" required />
+
+                    <button type="submit">Login</button>
+                </form>
+                <div id="errorMsg" class="error-msg"></div>
+                <div class="login-footer">
+                    Are you a teacher? <a href="login.html">Login here</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="scripts/student-login.js"></script>
+</body>
+
+</html>

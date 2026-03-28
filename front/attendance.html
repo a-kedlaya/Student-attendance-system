@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Lecturer Attendance</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <nav class="topbar">
+    <div class="brand">College Portal</div>
+    <div class="navlinks">
+      <a href="index.html">Dashboard</a>
+      <a href="students.html">Students</a>
+      <a href="attendance.html">Attendance</a>
+      <span id="teacherName" style="margin-left: 20px; color: #ffd43b;"></span>
+      <a href="#" onclick="logout(); return false;">Logout</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <h2>Lecturer Attendance Panel</h2>
+
+    <div class="formcard">
+      <label>Teacher
+        <select id="teacherSelect"></select>
+      </label>
+      <label>Class/Subject
+        <select id="classSelect"></select>
+      </label>
+      <label>Date <input type="date" id="attDate" /></label>
+      <button id="loadStudentsBtn">Load Students</button>
+    </div>
+
+    <div class="card">
+      <h3>Students</h3>
+      <form id="attendanceForm">
+        <div id="studentsList"></div>
+        <button type="submit">Submit Attendance</button>
+      </form>
+    </div>
+  </main>
+
+  <script src="scripts/common.js"></script>
+  <script src="scripts/attendance.js"></script>
+</body>
+
+</html>
